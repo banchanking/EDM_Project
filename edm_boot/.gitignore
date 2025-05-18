@@ -1,0 +1,65 @@
+# Maven 빌드 결과물
+/target/
+/out/
+/bin/
+/build/
+/logs/
+/*.war
+/*.jar
+/*.ear
+/*.class
+
+# Maven Wrapper 관련 파일 포함
+.mvn/
+!mvnw
+!mvnw.cmd
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS (Spring Tool Suite) ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.metadata/
+.metadata
+
+# Eclipse
+/.classpath
+/.project
+/.settings/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+
+# 로그 파일
+*.log
+
+# 환경 변수 및 비밀정보
+*.yml
+*.yaml
+*.jks
+.env
+
+# MacOS 임시파일
+.DS_Store
+
+# Windows 임시파일
+Thumbs.db
+ehthumbs.db
