@@ -1,0 +1,19 @@
+--edm project 
+
+-- 학생테이블
+CREATE TABLE student_tbl (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    address VARCHAR(200),
+    age INTEGER,
+    birth_date DATE,
+    gender VARCHAR(10),
+    mobile VARCHAR(100),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    level VARCHAR(50) DEFAULT 'beginner',
+    school VARCHAR(100),
+    country VARCHAR(10),
+    ai_profile JSONB,
+    created_at TIMESTAMP DEFAULT now()
+);
+
