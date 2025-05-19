@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           
+          {/* 학생정보등록 */}
           <Route 
             path="/studentEnroll"
             element={<StudentEnroll />}
