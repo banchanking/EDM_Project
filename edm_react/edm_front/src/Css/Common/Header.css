@@ -1,0 +1,248 @@
+/* ===== 공통 스타일 ===== */
+.custom-header {
+  width: 100%;
+  background: #fff;
+  padding: 24px 0 0 0;
+}
+.logo-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
+  position: relative; /* 햄버거 버튼 위치를 위해 */
+}
+.logo-img {
+  height: 125px;
+  width: 200px;
+}
+
+.main-nav {
+  width: 100%;
+  border-bottom: 1.5px solid #111;
+}
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.nav-item {
+  position: relative;
+  padding: 0 42px;
+  cursor: pointer;
+  font-size: 1.35rem;
+  height: 54px;
+  line-height: 54px;
+  color: #111;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  background: #fff;
+}
+
+.nav-item.active, .nav-item:hover {
+  border-bottom: 2.5px solid #ff267a;
+  color: #ff267a;
+  background: #fff;
+}
+
+.dropdown-list,
+.dropdown-list.mobile {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 190px;
+  background: #f7f7f7;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  border-radius: 0 0 12px 12px;
+  z-index: 101;
+  padding: 0.9rem 0 0.7rem 0;
+  margin: 0;
+  animation: dropdownFade 0.25s;
+  border-top: 1px solid #e0e0e0;
+  transition: max-height 0.3s;
+  overflow: hidden;
+  list-style: none;
+}
+
+@keyframes dropdownFade {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.dropdown-item {
+  padding: 0.65rem 0;
+  text-align: center;
+  list-style: none;
+  background: none;
+}
+.dropdown-item a {
+  color: #222;
+  font-size: 1.05rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.18s, background 0.18s;
+  display: block;
+  border-radius: 3px;
+  padding: 2px 6px;
+}
+.dropdown-item a:hover {
+  color: #ff267a;
+  background: #ffe3f3;
+}
+
+/* ===== 햄버거 버튼 스타일 ===== */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 102;
+}
+.hamburger-btn span {
+  display: block;
+  width: 32px;
+  height: 4px;
+  background: #ff267a;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+.hamburger-btn.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===== 반응형 모바일 스타일 ===== */
+@media (max-width: 992px) {
+    .nav-title {
+        display: block; /* span을 블록 처리하여 더 자연스럽게 보이게 함 */
+    }
+
+    .main-nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    z-index: 101;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1.5px solid #111;
+    transition: all 0.2s;
+    overflow: visible;
+  }
+  .main-nav.open {
+    display: block;
+  }
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
+  .nav-item {
+    padding: 12px 18px; /* 위아래 패딩을 추가하여 메뉴 높이를 조절 */
+    height: auto; /* 고정된 높이를 auto로 변경하여 서브메뉴가 아래로 밀리게 함 */
+    line-height: normal; /* line-height도 normal로 설정하여 자연스럽게 내용에 맞게 확장되게 함 */
+    border-bottom: 1px solid #eee;
+    border-left: 4px solid transparent;
+    text-align: left;
+    font-size: 1.18rem;
+    background: #fff;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .nav-item.active, .nav-item:hover {
+    padding-bottom: 10px !important;
+    background: #fff0fa;
+    border-left: 4px solid #ff267a;
+
+  }
+  /* 서브메뉴 모바일 */
+  .dropdown-list,
+  .dropdown-list.mobile-dropdown {
+    /* 모바일에서는 박스, 배경, width 제거! */
+    position: static !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    background: transparent !important;
+    margin: 0 !important;
+    margin-top: 4px !important; /* title과의 간격 조정 */
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border-top: none !important;
+    animation: none !important;
+    list-style: none !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+    display: block !important;
+    margin-top: 2px !important; /* 0~6px 취향껏 */
+  }
+  .dropdown-item {
+    padding: 10px 20px !important;
+    margin-bottom: 2px !important;
+    border-radius: 6px !important;
+    background: #faf7fa !important;
+    color: #222 !important;
+    font-size: 1.07rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    list-style: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: left !important;
+  }
+  .dropdown-item a {
+    display: block;
+    color: #222 !important;
+    background: none !important;
+    text-decoration: none;
+    border-radius: 4px !important;
+    padding: 0;
+  }
+  .dropdown-item a:hover {
+    color: #ff267a !important;
+    background: #ffe3f3 !important;
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+}
+
+@media (min-width: 993px) {
+  .hamburger-btn {
+    display: none !important;
+  }
+  .main-nav {
+    display: block !important;
+    position: static;
+    background: transparent;
+  }
+}
