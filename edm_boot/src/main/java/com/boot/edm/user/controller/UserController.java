@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*") // 개발용
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor

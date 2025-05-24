@@ -36,6 +36,14 @@ const menuList = [
         {name:"수익분석",   path:"#"}
     ]
   },
+
+  {
+    title: "사용자 관리",
+    sub: [
+      { name: "선생님 목록", path: "/teacherList" },
+      { name: "관리자 목록", path: "#" },
+    ],
+  },
 ];
 
 export default function Header() {
